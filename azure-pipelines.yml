@@ -1,0 +1,15 @@
+# azure-pipelines.yml
+trigger:
+- master
+
+pool:
+  vmImage: 'ubuntu-latest'
+
+steps:
+- task: Checkout@1
+  displayName: 'Checkout source code'
+
+- script: |
+    echo "Listing files in the working directory:"
+    ls -l
+  displayName: 'Run ls -l command'
